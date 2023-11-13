@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Repository(
+data class RepositoryModel(
     val id: Int,
     val name: String,
     val description: String,
