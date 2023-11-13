@@ -7,6 +7,6 @@ import retrofit2.http.QueryMap
 
 interface RepositoryServiceApi {
     @GET("search/repositories")
-    suspend fun loadPopularJavaRepositories(@QueryMap prams: Map<String, String>): Repository
+    suspend fun loadPopularJavaRepositories(@QueryMap (encoded = true) prams: Map<String, String>): Repository
 }
 

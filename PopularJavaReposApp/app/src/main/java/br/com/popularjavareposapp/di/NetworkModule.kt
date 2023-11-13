@@ -10,7 +10,7 @@ import org.koin.dsl.module
 object NetworkModule {
     val netWorkModule = module {
         factory { provideHttpInterceptor() }
-        factory { AuthenticationInterceptor() }
+        factory { AuthenticationInterceptor(get()) }
         factory { OkhttpFactory(get(), get()) }
         single { provideRetrofit(get()) }
         factory { provideRepositoryServiceApi(get()) }

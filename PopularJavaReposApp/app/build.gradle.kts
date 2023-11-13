@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "br.com.popularjavareposapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "br.com.popularjavareposapp"
@@ -82,7 +82,7 @@ dependencies {
 
     implementation ("com.google.code.gson:gson:2.8.9")
 
-    implementation("androidx.navigation:navigation-compose:$nav_version")
+   // implementation("androidx.navigation:navigation-compose:$nav_version")
 
 
     testImplementation("junit:junit:4.13.2")

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PopularJavaReposApp</string>
+    <string name="auth_token">Bearer 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</string>
 </resources>
