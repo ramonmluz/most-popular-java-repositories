@@ -3,48 +3,25 @@ package br.com.popularjavareposapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.viewmodel.compose.viewModel
 import br.com.popularjavareposapp.ui.theme.PopularJavaReposAppTheme
-import br.com.popularjavareposapp.ui.viewmodel.RepositoryViewModel
-import org.koin.androidx.compose.getViewModel
+import br.com.popularjavareposapp.ui.view.RepositoriesScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            PopularJavaReposAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    Greeting("Android")
-                }
-            }
+            RepositoriesScreen()
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    val repositoryViewModel:RepositoryViewModel = getViewModel()
-    repositoryViewModel.loadPopularJavaRepositories()
-
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-
-}
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     PopularJavaReposAppTheme {
-        Greeting("Android")
+        RepositoriesScreen()
     }
 }

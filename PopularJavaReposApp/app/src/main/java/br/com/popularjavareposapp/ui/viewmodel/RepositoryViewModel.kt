@@ -2,7 +2,6 @@ package br.com.popularjavareposapp.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.popularjavareposapp.data.Repository
 import br.com.popularjavareposapp.model.RepositoryModel
 import br.com.popularjavareposapp.ui.viewmodel.result.ResultViewState
 import br.com.popularjavareposapp.usecase.RepositoryUseCase
@@ -19,7 +18,7 @@ class RepositoryViewModel(private val repositoryUseCase: RepositoryUseCase) : Vi
     val repositories = _repositories.asStateFlow()
 
     fun loadPopularJavaRepositories() {
-
+        _repositories.tryEmit(ResultViewState.Loading)
         viewModelScope.launch {
             val result = repositoryUseCase.loadPopularJavaRepositories()
             _repositories.tryEmit(result)
