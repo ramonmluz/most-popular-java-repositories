@@ -78,11 +78,14 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp")
     implementation("com.squareup.okhttp3:logging-interceptor")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
-    implementation ("com.google.code.gson:gson:2.8.9")
+    implementation ("com.google.code.gson:gson:2.9.0")
 
-   // implementation("androidx.navigation:navigation-compose:$nav_version")
+    implementation ("androidx.constraintlayout:constraintlayout-compose:1.0.1")
+
+
+    // implementation("androidx.navigation:navigation-compose:$nav_version")
 
 
     testImplementation("junit:junit:4.13.2")

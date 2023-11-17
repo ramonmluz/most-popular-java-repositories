@@ -12,3 +12,5 @@ val Pink40 = Color(0xFF7D5260)
 
 val onSurface100: Color = Color(0xFFEBEBEB)
 val textColor: Color = Color(0xFF202E44)
+val steelBlue: Color = Color(0xFF3977AA)
+val gamboge: Color = Color(0xFFE59805)

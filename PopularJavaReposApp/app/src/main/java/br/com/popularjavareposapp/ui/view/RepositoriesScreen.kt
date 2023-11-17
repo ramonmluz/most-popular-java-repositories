@@ -92,25 +92,25 @@ private fun getRepositories(): RepositoryResponse {
         RepositoryModel(
             0,
             "Nome do Reposítório",
-            LoremIpsum(12).values.first(),
-            5,
-            5,
+            LoremIpsum(10).values.first(),
+            300,
+            600,
+            user = User("username",    "")
+        ),
+        RepositoryModel(
+            0,
+            "Nome do Reposítório",
+            LoremIpsum(10).values.first(),
+            200,
+            100,
             user = User("username", "")
         ),
         RepositoryModel(
             0,
             "Nome do Reposítório",
-            LoremIpsum(12).values.first(),
-            5,
-            5,
-            user = User("username", "")
-        ),
-        RepositoryModel(
-            0,
-            "Nome do Reposítório",
-            LoremIpsum(12).values.first(),
-            5,
-            5,
+            LoremIpsum(10).values.first(),
+            100,
+            40,
             user = User("username", "")
         ),
     )
