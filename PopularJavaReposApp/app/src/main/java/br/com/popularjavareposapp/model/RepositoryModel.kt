@@ -8,6 +8,8 @@ import kotlinx.android.parcel.Parcelize
 data class RepositoryModel(
     val id: Int,
     val name: String,
+    @SerializedName("full_name")
+    val fullName: String,
     val description: String,
     @SerializedName("stargazers_count")
     val stargazers: Int,

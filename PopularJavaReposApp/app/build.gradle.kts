@@ -84,6 +84,8 @@ dependencies {
 
     implementation ("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 
+    implementation ("com.github.bumptech.glide:compose:1.0.0-beta01")
+
 
     // implementation("androidx.navigation:navigation-compose:$nav_version")
 

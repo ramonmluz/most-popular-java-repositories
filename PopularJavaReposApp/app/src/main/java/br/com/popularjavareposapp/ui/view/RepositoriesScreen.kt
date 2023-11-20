@@ -92,6 +92,7 @@ private fun getRepositories(): RepositoryResponse {
         RepositoryModel(
             0,
             "Nome do Reposítório",
+            "Nome Completo",
             LoremIpsum(10).values.first(),
             300,
             600,
@@ -100,6 +101,7 @@ private fun getRepositories(): RepositoryResponse {
         RepositoryModel(
             0,
             "Nome do Reposítório",
+            "Nome Completo",
             LoremIpsum(10).values.first(),
             200,
             100,
@@ -108,6 +110,7 @@ private fun getRepositories(): RepositoryResponse {
         RepositoryModel(
             0,
             "Nome do Reposítório",
+            "Nome Completo",
             LoremIpsum(10).values.first(),
             100,
             40,
