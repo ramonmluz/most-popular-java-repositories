@@ -13,7 +13,11 @@ import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -92,9 +96,6 @@ private fun RepositoryCardContent(repositoryModel: RepositoryModel) {
 
     ConstraintLayout(
         modifier = Modifier
-            .clickable(
-                onClick = { navigateToNextScreen() }
-            )
             .fillMaxWidth()
             .padding(top = 16.dp, bottom = 16.dp)
     ) {
@@ -203,7 +204,7 @@ private fun RepositoryCardContent(repositoryModel: RepositoryModel) {
                 start.linkTo(infoGroup.end)
             }
         ) {
-            val imageUserId = createRef()
+            val (imageUserId, iconId) = createRefs()
             GlideImage(
                 model = repositoryModel.user.photo,
                 contentDescription = "",
@@ -217,6 +218,20 @@ private fun RepositoryCardContent(repositoryModel: RepositoryModel) {
                         end.linkTo(parent.end)
                     }
             )
+
+            IconButton(onClick = {},
+                modifier = Modifier
+                    .constrainAs(iconId) {
+                       linkTo(top = parent.top, bottom = parent.bottom, bias = 0F)
+                      end.linkTo(parent.end)
+                      start.linkTo(imageUserId.end)
+                    }) {
+                Icon(
+                    contentDescription = "",
+                    imageVector = Icons.Filled.KeyboardArrowRight
+                )
+            }
+
         }
     }
 }

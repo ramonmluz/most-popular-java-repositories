@@ -86,9 +86,7 @@ dependencies {
 
     implementation ("com.github.bumptech.glide:compose:1.0.0-beta01")
 
-
-    // implementation("androidx.navigation:navigation-compose:$nav_version")
-
+    implementation("androidx.navigation:navigation-compose:$nav_version")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
