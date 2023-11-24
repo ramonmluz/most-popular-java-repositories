@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">PopularJavaReposApp</string>
-    <string name="auth_token">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</string>
-    <string name="java_repos_github">Java Repos Github</string>
+    <string name="auth_token"></string>
+    <string name="java_repos_github">Java Repos GitHub</string>
 </resources>

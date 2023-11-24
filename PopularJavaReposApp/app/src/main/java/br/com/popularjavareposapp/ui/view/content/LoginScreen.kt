@@ -61,6 +61,7 @@ private fun LoginContent(focusRequester: FocusRequester,  navigate: () -> Unit) 
 
     Column(modifier = Modifier.padding(16.dp)) {
         OutlinedTextField(
+            placeholder = { },
             value = text,
             onValueChange = { text = it },
             shape = RectangleShape,
@@ -69,12 +70,10 @@ private fun LoginContent(focusRequester: FocusRequester,  navigate: () -> Unit) 
                 keyboardType = KeyboardType.Text,
                 imeAction = ImeAction.Next
             ),
-            placeholder = { },
             modifier = Modifier
                 .fillMaxWidth()
                 .focusRequester(focusRequester)
         )
-
         OutlinedTextField(
             placeholder = { },
             value = password,
