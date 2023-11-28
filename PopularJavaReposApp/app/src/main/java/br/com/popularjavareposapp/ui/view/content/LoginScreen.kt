@@ -25,6 +25,8 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -54,14 +56,13 @@ fun LoginScreen(focusRequester: FocusRequester, navigate: () -> Unit) {
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
-private fun LoginContent(focusRequester: FocusRequester,  navigate: () -> Unit) {
+private fun LoginContent(focusRequester: FocusRequester, navigate: () -> Unit) {
 
     var text by remember { mutableStateOf("") }
     var password by rememberSaveable { mutableStateOf("") }
 
     Column(modifier = Modifier.padding(16.dp)) {
         OutlinedTextField(
-            placeholder = { },
             value = text,
             onValueChange = { text = it },
             shape = RectangleShape,
@@ -73,6 +74,9 @@ private fun LoginContent(focusRequester: FocusRequester,  navigate: () -> Unit) 
             modifier = Modifier
                 .fillMaxWidth()
                 .focusRequester(focusRequester)
+                .semantics {
+                    contentDescription = "Tocar duas vezes para inserir o"
+                }
         )
         OutlinedTextField(
             placeholder = { },
@@ -85,7 +89,12 @@ private fun LoginContent(focusRequester: FocusRequester,  navigate: () -> Unit) 
                 keyboardType = KeyboardType.Password,
                 imeAction = ImeAction.Next
             ),
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
+                .semantics {
+                    contentDescription = "Tocar duas vezes" +
+                            " para inserir o"
+                }
         )
 
         Button(

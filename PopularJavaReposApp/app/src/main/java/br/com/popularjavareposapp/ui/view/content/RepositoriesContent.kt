@@ -149,7 +149,7 @@ private fun RepositoryCardContent(repositoryModel: RepositoryModel) {
 
             Image(
                 painter = painterResource(id = R.drawable.ic_fork),
-                contentDescription = "",
+                contentDescription = "representa o fork de repositório",
                 modifier = Modifier
                     .size(24.dp)
                     .constrainAs(imageForkId) {
@@ -173,7 +173,7 @@ private fun RepositoryCardContent(repositoryModel: RepositoryModel) {
 
             Image(
                 painter = painterResource(id = R.drawable.ic_star),
-                contentDescription = "",
+                contentDescription = "representa o like do repositório",
                 modifier = Modifier
                     .size(24.dp)
                     .constrainAs(imageStartId) {
@@ -207,7 +207,7 @@ private fun RepositoryCardContent(repositoryModel: RepositoryModel) {
             val (imageUserId, iconId) = createRefs()
             GlideImage(
                 model = repositoryModel.user.photo,
-                contentDescription = "",
+                contentDescription = "foto do usuário ${repositoryModel.user.login}",
                 loading = placeholder(painterResource(R.drawable.ic_launcher_background)),
                 modifier = Modifier
                     .size(48.dp)
@@ -222,12 +222,16 @@ private fun RepositoryCardContent(repositoryModel: RepositoryModel) {
             IconButton(onClick = {},
                 modifier = Modifier
                     .constrainAs(iconId) {
-                       linkTo(top = parent.top, bottom = parent.bottom, bias = 0F)
-                      end.linkTo(parent.end)
-                      start.linkTo(imageUserId.end)
+                        linkTo(
+                            top = parent.top,
+                            bottom = parent.bottom,
+                            bias = 0F
+                        )
+                        end.linkTo(parent.end)
+                        start.linkTo(imageUserId.end)
                     }) {
                 Icon(
-                    contentDescription = "",
+                    contentDescription = "Ir à tela de detalhe",
                     imageVector = Icons.Filled.KeyboardArrowRight
                 )
             }
